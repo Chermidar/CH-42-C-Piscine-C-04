@@ -21,9 +21,11 @@ int	ft_atoi(char *str)
 	nb = 0;
 	c = 0;
 	s = 1;
+//	Advance spaces according to isspace(3)
 	while ((str[c] >= 9
 			&& str[c] <= 13) || str[c] == 32)
 		c++;
+//	Sign multiplier
 	while (str[c] != 0 && (str[c] == 43
 			|| str[c] == 45))
 	{
@@ -31,6 +33,7 @@ int	ft_atoi(char *str)
 			s *= -1;
 		c++;
 	}
+//	Write the string of numbers until another type of parameter is found
 	while (str[c] >= 48 && str[c] <= 57)
 	{
 		nb = (str[c] - 48) + (nb * 10);
